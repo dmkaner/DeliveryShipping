@@ -109,7 +109,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    applicationId "com.invertase.rnfirebasestarter"
+    applicationId "com.dmc.deliveryshipping"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
@@ -154,6 +154,9 @@ android {
 }
 
 dependencies {
+  compile project(':react-native-maps')  //check this
+  compile project(':react-native-firebase')  //check this
+
   implementation(project(':react-native-firebase')) {
     transitive = false
   }
@@ -164,7 +167,7 @@ dependencies {
 
   // RNFirebase required dependencies
   implementation "com.google.firebase:firebase-core:16.0.4"
-  implementation "com.google.android.gms:play-services-base:16.0.1"
+  //implementation "com.google.android.gms:play-services-base:16.0.1"
 
   // RNFirebase optional dependencies
   implementation "com.google.firebase:firebase-ads:15.0.1"
@@ -185,6 +188,13 @@ dependencies {
   implementation "com.android.support:support-annotations:${rootProject.ext.supportLibVersion}"
 
   implementation fileTree(dir: "libs", include: ["*.jar"])
+
+  implementation(project(':react-native-maps')){
+      exclude group: 'com.google.android.gms', module: 'play-services-base'
+      exclude group: 'com.google.android.gms', module: 'play-services-maps'
+  }
+  implementation 'com.google.android.gms:play-services-base:16.0.1'
+  implementation 'com.google.android.gms:play-services-maps:16.0.0'
 }
 
 // Run this once to be able to run the application with BUCK
