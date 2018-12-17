@@ -1,0 +1,36 @@
+
+To Do
+    Home
+        - get the home location shortcut to work
+        - improve transition to request pickup screen  
+    Add Payment 
+        - improve design
+    Help 
+        - design the page
+    Logistics
+        - solidify the process of how it should go down
+        - improve design
+        - make the payment part on this page feel more legit
+        - on payment make database change paid value to true
+        - on payment add date/time field to database
+        - on payment add status field to database
+    Pickups
+        - improve design
+        - add push notifications
+    Profile
+        - improve design
+        - add profile picture ability
+    Request Pickup 
+        - improve design
+    
+    
+
+Done
+    Sign In
+        - improve design
+    Sign Out
+        - nothing 
+    Sign Up
+        - improve design
+
+

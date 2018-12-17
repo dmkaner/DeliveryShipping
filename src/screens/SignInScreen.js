@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import firebase from 'react-native-firebase';
-import { Button } from 'native-base';
-import { Card, CardSection, Input } from '../components/common';
+import { Button, Container, Content, Text, Input, Form, Item, Label, Left, Body, Right, Icon, Header } from 'native-base';
+//import { Card, CardSection, Input } from '../components/common';
 
 
 export default class SignInScreen extends Component {
 
     static navigationOptions = {
         title: 'Sign In',
+        header: null
     };
 
     state = { 
@@ -43,45 +43,50 @@ export default class SignInScreen extends Component {
 
     render() {
         return (
-            <Card>
-                <CardSection>
-                    <Text style={Styles.header}>Sign In</Text>
-                </CardSection>
+            <Container>
+                <Content>
+                    <Header transparent>
+                        <Left>
+                            <Button iconLeft transparent onPress={ () => this.props.navigation.navigate('SignUp')}>
+                                <Icon name='arrow-back' />
+                            </Button>
+                        </Left>
+                        <Body>
+                        </Body>
+                        <Right>
+                        </Right>
+                    </Header>
+                    
+                    <Text style={{marginStart: 15, fontSize: 30, fontWeight: "bold"}}>Sign In</Text>
 
-                <CardSection>
-                    <Input
-                        placeholder='example@gmail.com'
-                        label='Email'
-                        value={this.state.emailIn}
-                        onChangeText={text => this.setState({ emailIn: text })}
-                    />
-                </CardSection>
+                    <Form style={{margin: 15}}>
+                        <Item floatingLabel>
+                            <Label>Email</Label>
+                            <Input
+                                autoCorrect={false}
+                                value={this.state.emailIn}
+                                onChangeText={text => this.setState({ emailIn: text })}
+                            />
+                        </Item>
+                        <Item floatingLabel last>
+                            <Label>Password</Label>
+                            <Input
+                                secureTextEntry={true}
+                                autoCorrect={false}
+                                value={this.state.passwordIn}
+                                onChangeText={text => this.setState({ passwordIn: text})}
+                            />
+                        </Item>
+                    </Form>
 
-                <CardSection>
-                    <Input
-                        secureTextEntry={true}
-                        placeholder='password'
-                        label='Password'
-                        value={this.state.passwordIn}
-                        onChangeText={text => this.setState({ passwordIn: text})}
-                    />
-                </CardSection>
-
-                <CardSection>
-                    <Button onPress={this.onSignInButtonPress.bind(this)}>
+                    <Button block bordered rounded onPress={this.onSignInButtonPress.bind(this)} style={{margin: 15}}>
                         <Text>Sign In</Text>
                     </Button>
-                </CardSection>
 
-                <CardSection>
-                    <Button onPress={ () => this.props.navigation.navigate('SignUp')}>
-                        <Text>Sign Up</Text>
-                    </Button>
-                </CardSection>
+                    <Text style={Styles.errorTextStyle}>{this.state.error}</Text>
 
-                <Text style={Styles.errorTextStyle}>{this.state.error}</Text>
-
-            </Card>
+                </Content>
+            </Container>
         );
     }
 }
