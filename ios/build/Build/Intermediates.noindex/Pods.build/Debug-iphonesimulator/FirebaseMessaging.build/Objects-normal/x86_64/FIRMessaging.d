@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging.m \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingContextManagerService.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPubSub.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingSyncMessageManager.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingVersionUtilities.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRAppInternal.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrors.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrorCode.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FirebaseInstanceID.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FIRInstanceID.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/GoogleUtilities/GULReachabilityChecker.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h

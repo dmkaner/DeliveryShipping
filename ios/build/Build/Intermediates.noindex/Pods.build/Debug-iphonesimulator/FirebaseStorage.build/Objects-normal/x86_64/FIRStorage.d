@@ -1,0 +1,28 @@
+dependencies: \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/FIRStorage.m \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorage.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageConstants.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageComponent.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageConstants_Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStoragePath.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageReference_Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageReference.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageDownloadTask.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageObservableTask.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageTask.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageMetadata.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageUploadTask.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageTokenAuthorizer.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcherService.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcher.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageUtils.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorage_Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseAuthInterop/FIRAuthInterop.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRAppInternal.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrors.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrorCode.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponentContainer.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponentType.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIROptions.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcherLogging.h

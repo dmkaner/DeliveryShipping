@@ -4,6 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.facebook.react.ReactNativeHost;
@@ -44,6 +48,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.asList(
         new MainReactPackage(),
+            new RNFetchBlobPackage(),
+            new MapsPackage(),
+            new RNFirebasePackage(),
+            new PickerPackage(),
             new MapsPackage(),
         new RNFirebasePackage(),
         // add/remove these packages as appropriate

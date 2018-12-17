@@ -119,6 +119,7 @@ android {
     }
     // because of firestore:
     multiDexEnabled true
+    vectorDrawables.useSupportLibrary = true
   }
   splits {
     abi {
@@ -154,6 +155,10 @@ android {
 }
 
 dependencies {
+    compile project(':rn-fetch-blob')
+    compile project(':react-native-maps')
+    compile project(':react-native-firebase')
+    compile project(':react-native-image-crop-picker')
   compile project(':react-native-maps')  //check this
   compile project(':react-native-firebase')  //check this
 

@@ -53,6 +53,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Profile Pictures</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>

@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTTouchHandler.m \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTTouchHandler.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/Surface/RCTSurfaceView.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTTouchEvent.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Modules/RCTUIManager.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTRootView.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTViewManager.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/node_modules/react-native/React/Views/RCTComponent.h

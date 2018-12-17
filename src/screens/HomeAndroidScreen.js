@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, TouchableOpacity, Dimensions } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import firebase from 'react-native-firebase';
 import MapView, { Marker, PROVIDER_GOOGLE, Callout } from 'react-native-maps';
 import { Button, Icon, Text, Header, Left, Container, Body, Right, Card, CardItem } from 'native-base';
@@ -30,6 +30,7 @@ export default class HomeAndroidScreen extends Component {
                 latitude: 0,
                 longitude: 0,
             },
+            firstLaunch: null
         };
     }
 
@@ -47,13 +48,33 @@ export default class HomeAndroidScreen extends Component {
 
     initiateLocationPickup() {
         let address = 'none'
-        Geocoder.from(this.state.marker.latitude, this.state.marker.longitude)
+        let lat = this.state.marker.latitude;
+        let long = this.state.marker.longitude;
+        Geocoder.from(lat, long)
         .then(json => {
             address = json.results[0].formatted_address;
+            this.props.navigation.navigate('RequestPickup', { location: address, lat: lat, long: long });
             console.log(address);
         })
         .catch(error => console.warn(error));
-        this.props.navigation.navigate('RequestPickup', { location: address });
+        
+    }
+
+    renderProfileShortcut() {
+        if (this.state.firstLaunch == true) {
+            return (
+                <Card style={styles.firstLaunchCard}>
+                    <Button transparent style={styles.firstLaunchCardButtonExit} onPress={() => this.setState({firstLaunch:false})}>
+                        <Icon name='close' type='FontAwesome' style={{ fontSize: 20 }}/>
+                    </Button>
+                    <Text>Enter Information for a more convenient experience!</Text>
+
+                    <Button bordered style={styles.firstLaunchCardButtonProfile} onPress={() => {this.props.navigation.navigate('Profile')}}>
+                        <Text>Go To Profile</Text>
+                    </Button>
+                </Card>
+            )
+        }
     }
 
     componentDidMount() {
@@ -86,7 +107,17 @@ export default class HomeAndroidScreen extends Component {
 
             this.setState({initialPosition:lastRegion});
             this.setState({markerPosition:lastRegion});
-        })
+        });
+
+        AsyncStorage.getItem("alreadyLaunched").then(value => {
+            if (value == null) {
+                 AsyncStorage.setItem('alreadyLaunched', 'true'); // No need to wait for `setItem` to finish, although you might want to handle errors
+                 this.setState({firstLaunch: true});
+            }
+            else {
+                 this.setState({firstLaunch: false});
+            }
+        }) // Add some error handling, also you can simply do this.setState({fistLaunch: value == null})
     }
 
     componentWillUnmount() {
@@ -142,8 +173,9 @@ export default class HomeAndroidScreen extends Component {
                     </Right>
                 </Header>
 
+                {/* change to cardItem button */}
                 <Card style={styles.mainCard}>
-                    <CardItem style={styles.mainCardItem}>
+                    <CardItem style={styles.mainCardItem}>  
                         <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: 'hey' })}}>
                             <Icon type='Feather' name='package' style={{fontSize: 25, color: 'black'}}/>
                             <Text style={styles.text}>Where's the Pickup?</Text>
@@ -157,6 +189,8 @@ export default class HomeAndroidScreen extends Component {
                         </TouchableOpacity>
                     </CardItem>
                 </Card>
+
+                {this.renderProfileShortcut()}
             </Container>
         );
     }
@@ -227,5 +261,21 @@ const styles = StyleSheet.create({
     },
     amount: {
         flex: 1,
+    },
+    firstLaunchCard: {
+        marginTop: 100,
+        marginLeft: 60,
+        marginRight: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    firstLaunchCardButtonProfile: {
+        alignSelf: 'center',
+        marginTop: 20,
+        marginBottom: 20
+    },
+    firstLaunchCardButtonExit: {
+        alignSelf: 'flex-end'
     },
 });

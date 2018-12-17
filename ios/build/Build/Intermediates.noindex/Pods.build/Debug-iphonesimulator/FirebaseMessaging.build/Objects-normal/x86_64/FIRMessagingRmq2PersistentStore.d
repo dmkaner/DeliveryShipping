@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmq2PersistentStore.m \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmq2PersistentStore.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPersistentSyncMessage.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseMessaging/Firebase/Messaging/Protos/GtalkCore.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h

@@ -1,0 +1,28 @@
+dependencies: \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDynamicLinks.m \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/Public/FIRDynamicLinks.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/Public/FIRDynamicLink.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/Public/FIRDynamicLinksCommon.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRAnalyticsInterop.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRAppInternal.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrors.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRErrorCode.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponent.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponentContainer.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponentType.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRComponentRegistrant.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRCoreConfigurable.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIRDependency.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIROptionsInternal.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/Headers/Private/FirebaseCore/FIROptions.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDLScionLogging.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDLRetrievalProcessFactory.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDLRetrievalProcessProtocols.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDLRetrievalProcessResult.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDynamicLink+Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDynamicLinkNetworking.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDynamicLinks+FirstParty.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/FIRDynamicLinks+Private.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/Logging/FDLLogging.h \
+  /Users/dyl/Desktop/DeliveryShippingCloudFunctions/ios/Pods/FirebaseDynamicLinks/Firebase/DynamicLinks/Utilities/FDLUtilities.h

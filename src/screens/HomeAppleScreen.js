@@ -125,6 +125,7 @@ export default class HomeAppleScreen extends Component {
     }
 
     render() {
+
         return (
             <Container>
                 <MapView
@@ -275,20 +276,9 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20
     },
-    // firstLaunchCardButtonPayment: {
-    //     // alignSelf: 'flex-end',
-    //     marginTop: 20,
-    //     // marginRight: 10,
-    //     marginBottom: 20
-    // },
     firstLaunchCardButtonExit: {
         alignSelf: 'flex-end'
     },
-    // firstLaunchCardButtonContainer: {
-    //     flex: 1,
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    // }
 });
 
 //     watchID: ?number = null;
