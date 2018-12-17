@@ -3,8 +3,11 @@ Uses many technologies that in conjunciton are hard to get working perfectly but
 that, with a lot of time put in, got things working nicely. Implements:
 
 Firebase Firestore as a database
+
 Firebase Cloud Functions for interactions with Stripe
+
 Stripe for processing payments
+
 Google Maps API and its constituents
 
 Although this does not seem like a lot, at the time it is pretty hard to get all of these working considering these
