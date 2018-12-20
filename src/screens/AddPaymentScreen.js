@@ -3,7 +3,7 @@ import Stripe from 'react-native-stripe-api';
 import firebase from 'react-native-firebase';
 import { View } from 'react-native';
 import { CreditCardInput } from 'react-native-credit-card-input';
-import { Button, Text, Container, Content } from 'native-base';
+import { Button, Root, Text, Container, Content, Header, Left, Right, Body, Icon, Toast } from 'native-base';
 
 export default class AddPaymentScreen extends PureComponent {
 
@@ -47,35 +47,73 @@ export default class AddPaymentScreen extends PureComponent {
         const client = new Stripe(apiKey);
         const currentUser = firebase.auth().currentUser;
 
-        const tokenVal = await client.createToken({
-            number: this.state.cardInfo.values.number.replace(/ +/g, ""),
-            exp_month: this.state.cardInfo.values.expiry.slice(0, 2), 
-            exp_year: this.state.cardInfo.values.expiry.slice(3), 
-            cvc: this.state.cardInfo.values.cvc
-        });
+        if (this.state.cardInfo){
 
-        console.log(tokenVal);
+            try {
+                const token = await client.createToken({
+                    number: this.state.cardInfo.values.number.replace(/ +/g, ""),
+                    exp_month: this.state.cardInfo.values.expiry.slice(0, 2), 
+                    exp_year: this.state.cardInfo.values.expiry.slice(3), 
+                    cvc: this.state.cardInfo.values.cvc
+                })
 
-        this.ref = firebase.firestore().collection(`stripe_customers/${currentUser.uid}/tokens`);
-        this.ref.add({token: tokenVal.id});
-        
+                this.ref = firebase.firestore().collection(`stripe_customers/${currentUser.uid}/tokens`);
+                this.ref.add({token: token.id});
+                
+                Toast.show({
+                    text: 'Card Added Successfully',
+                    buttonText: 'Okay',
+                    type: 'success'
+                });
+            } catch (error) {
+                Toast.show({
+                    text: 'Invalid Card',
+                    buttonText: 'Okay',
+                    type: 'danger'
+                });
+            }
+
+        } else {
+            Toast.show({
+                text: 'Must Fill All Fields',
+                buttonText: 'Okay',
+                type: 'danger'
+            });
+        }
     }
 
     render() {
 
         return (
+            <Root>
             <Container>
                 <Content>
-                    <CreditCardInput onChange={(this._onChange)} />
+                    <Header transparent style={{ marginBottom: 30 }}>
+                        <Left>
+                            <Button transparent onPress={() => {this.props.navigation.openDrawer()}}>
+                                <Icon name='menu' style={{fontSize: 35, color: 'black'}}/>
+                            </Button>
+                        </Left>
+                        <Body>
+                            {/* nothing */}
+                        </Body>
+                        <Right>
+                            {/* nothing */}
+                        </Right>
+                    </Header>
+
+                    <CreditCardInput onChange={(this._onChange)}/>
                     
-                    <Button onPress={this.onSubmitButtonPress.bind(this)}>
+                    <Button block rounded bordered onPress={this.onSubmitButtonPress.bind(this)} style={{ margin: 30 }}>
                         <Text>Add Card</Text>
                     </Button>
                 </Content>
             </Container>
+            </Root>
         );
     }
 }
+
 
 
 

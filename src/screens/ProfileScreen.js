@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View, TouchableOpacity, AsyncStorage } from 'react-native';
+import { Image, StyleSheet, View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import firebase from 'react-native-firebase';
 import { Header, Button, Container, Content, Form, Item, Label, Input, Text, Left, Body, Right, Icon } from 'native-base';
 import RNFetchBlob from 'rn-fetch-blob';

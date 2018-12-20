@@ -23,7 +23,8 @@ export default {
   drawerImage: {
     width: 50,
     height: 50,
-    resizeMode: "cover"
+    resizeMode: "cover",
+    borderRadius: 25
   },
   text: {
     fontWeight: Platform.OS === "ios" ? "500" : "400",

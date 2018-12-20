@@ -3,8 +3,6 @@ To Do
     Home
         - get the home location shortcut to work
         - improve transition to request pickup screen  
-    Add Payment 
-        - improve design
     Help 
         - design the page
     Logistics
@@ -17,20 +15,24 @@ To Do
     Pickups
         - improve design
         - add push notifications
+    Request Pickup 
+        - improve design
+        - address distance calculator
+        - address validator
+    
+
+
+Done
     Profile
         - improve design
         - add profile picture ability
-    Request Pickup 
-        - improve design
-    
-    
-
-Done
     Sign In
         - improve design
     Sign Out
         - nothing 
     Sign Up
+        - improve design
+    Add Payment 
         - improve design
 
 

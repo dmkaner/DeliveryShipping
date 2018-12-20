@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, View } from "react-native";
+import firebase from "react-native-firebase";
 import {
   Content,
   Text,
@@ -66,11 +67,31 @@ class SideBar extends Component {
     super(props);
     this.state = {
       shadowOffsetWidth: 1,
-      shadowRadius: 4
+      shadowRadius: 4, 
+      dp: null
     };
   }
 
+  getUrl() {
+      const imageRef = firebase.storage().ref(firebase.auth().currentUser.uid).child("dp.jpg")
+      imageRef.getDownloadURL().then(function(url) {
+          this.setState({dp: url});
+      }.bind(this));
+  }
+
   render() {
+
+    this.getUrl();
+
+    const dpr = this.state.dp ? (
+      <Image
+          style={styles.drawerImage}
+          source={{uri: this.state.dp}}
+      />
+    ) : (
+      <Image square style={styles.drawerImage} source={userIcon} />
+    )
+
     return (
       <Container>
         <Content
@@ -80,7 +101,10 @@ class SideBar extends Component {
           <Image source={drawerCover} style={styles.drawerCover} />
           
           <View style={styles.drawerView}>
-            <Image square style={styles.drawerImage} source={userIcon} />
+            {/* <Image square style={styles.drawerImage} source={userIcon} /> */}
+
+            { dpr }
+
             <Text style={styles.userName}>Dylan Kane</Text>
           </View>
           
