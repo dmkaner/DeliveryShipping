@@ -177,14 +177,14 @@ export default class HomeAppleScreen extends Component {
                 {/* change to cardItem button */}
                 <Card style={styles.mainCard}>
                     <CardItem style={styles.mainCardItem}>  
-                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: 'hey' })}}>
+                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: '' })}}>
                             <Icon type='Feather' name='package' style={{fontSize: 25, color: 'black'}}/>
                             <Text style={styles.text}>Where's the Pickup?</Text>
                         </TouchableOpacity>
                     </CardItem>
 
                     <CardItem style={styles.homeCardItem}>
-                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: 'hi' })}}>
+                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: '' })}}>
                             <Icon type='Feather' name='home' style={{fontSize: 22, color: 'black'}}/>
                             <Text style={styles.textMini}>Home</Text>
                         </TouchableOpacity>

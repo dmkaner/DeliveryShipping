@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>932DFE84-1F47-438E-B488-ED126D056C8E</key>
+		<key>4F78523C-BA7E-4CAC-8870-4519B60B5024</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>932DFE84-1F47-438E-B488-ED126D056C8E.xcactivitylog</string>
+			<string>4F78523C-BA7E-4CAC-8870-4519B60B5024.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,13 +27,13 @@
 			<key>signature</key>
 			<string>Building workspace DeliveryShipping with scheme DeliveryShipping and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>566724274.37718797</real>
+			<real>567237329.69347596</real>
 			<key>timeStoppedRecording</key>
-			<real>566724276.906394</real>
+			<real>567237333.47874796</real>
 			<key>title</key>
 			<string>Building workspace DeliveryShipping with scheme DeliveryShipping and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>932DFE84-1F47-438E-B488-ED126D056C8E</string>
+			<string>4F78523C-BA7E-4CAC-8870-4519B60B5024</string>
 		</dict>
 	</dict>
 </dict>
