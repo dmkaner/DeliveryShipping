@@ -1,4 +1,4 @@
-App I created as a delivery service kind of like Uber. Made with React Native, very stable and maticulous build. 
+App I created as a delivery service kind of like Uber. Made with React Native, very stable and meticulous build. 
 Uses many technologies that in conjunciton are hard to get working perfectly but here lies an implementation 
 that, with a lot of time put in, got things working nicely. Implements:
 
