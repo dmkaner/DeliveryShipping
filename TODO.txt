@@ -2,24 +2,17 @@
 To Do
     Home
         - get the home location shortcut to work
-        - improve transition to request pickup screen  
+        - must add payment to order
     Help 
         - design the page
     Logistics
-        - solidify the process of how it should go down
-        - improve design
-        - make the payment part on this page feel more legit
-        - on payment make database change paid value to true
-        - on payment add date/time field to database
-        - on payment add status field to database
+        - add loading thingy
     Pickups
         - improve design
+        - show status
         - add push notifications
-    Request Pickup 
-        - improve design
-        - address distance calculator
-        - address validator
-    
+    Add Payment
+        - add loading thingy
 
 
 Done
@@ -34,5 +27,16 @@ Done
         - improve design
     Add Payment 
         - improve design
+    Request Pickup 
+        - improve design
+        - address distance calculator
+        - address validator
+    Logistics
+        - solidify the process of how it should go down
+        - improve design
+        - make the payment part on this page feel more legit
+        - on payment make database change paid value to true
+        - on payment add date/time field to database
+        - on payment add status field to database
 
 

@@ -24,6 +24,12 @@ exports.createStripeCharge = functions.firestore.document('stripe_customers/{use
         }
         const response = await stripe.charges.create(charge, {idempotency_key: idempotencyKey});
         // If the result is successful, write it back to the database
+        const userSnapshot = await admin.firestore().collection(`users`).doc(context.params.userId).get()
+        const userSnapval = userSnapshot.data();
+        const pickupCount = userSnapval.pickupCount
+        const confirmPay = await admin.firestore().collection('users').doc(context.params.userId).collection('pickups').doc(pickupCount.toString()).update({
+          paid: true
+        });
         return snap.ref.set(response, { merge: true });
       } catch(error) {
         // We want to capture errors and render them in a user-friendly way, while

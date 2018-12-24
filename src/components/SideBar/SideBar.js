@@ -73,10 +73,14 @@ class SideBar extends Component {
   }
 
   getUrl() {
+    try {
       const imageRef = firebase.storage().ref(firebase.auth().currentUser.uid).child("dp.jpg")
       imageRef.getDownloadURL().then(function(url) {
           this.setState({dp: url});
       }.bind(this));
+    } catch (error) {
+      console.log('user should be signed out', error);
+    } 
   }
 
   render() {
