@@ -77,7 +77,7 @@ class SideBar extends Component {
       const imageRef = firebase.storage().ref(firebase.auth().currentUser.uid).child("dp.jpg")
       imageRef.getDownloadURL().then(function(url) {
           this.setState({dp: url});
-      }.bind(this));
+      }.bind(this)).catch((error)=> {console.log(error, 'no prof pic')});
     } catch (error) {
       console.log('user should be signed out', error);
     } 

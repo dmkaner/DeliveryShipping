@@ -4,8 +4,6 @@ import firebase from 'react-native-firebase';
 import geolib from 'geolib';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
-const homePlace = { description: 'Home', geometry: { location: { lat: 48.8152937, lng: 2.4597668 } }};
-
 export default class RequestPickupScreen extends Component {
 
     static navigationOptions = {
@@ -27,13 +25,15 @@ export default class RequestPickupScreen extends Component {
             pickupSuggestions: [],
             pickupCount: 0,
             pickupDetails: [],
-            dropOffDetails: []
+            dropOffDetails: [],
+            // homeAddress: ''
         };
     }
 
     componentDidMount() {
-        this.unsubscribe = this.ref.doc(this.user.uid).onSnapshot(this.onCollectionUpdate)
-        
+        // this.unsubscribe = this.ref.doc(this.user.uid).collection('profile').doc('info').onSnapshot(this.onCollectionUpdateHomeAddress)
+        this.unsubscribe = this.ref.doc(this.user.uid).onSnapshot(this.onCollectionUpdatePickupCount)
+
         // if (this.state.pickupAddress != '' && this.state.pickupAddress != null) {
         //     this.getPlaces()
         // }
@@ -43,11 +43,31 @@ export default class RequestPickupScreen extends Component {
         this.unsubscribe();
     }
     
-    onCollectionUpdate = (querySnapshot) => {
+    onCollectionUpdatePickupCount = (querySnapshot) => {
         this.setState({ 
             pickupCount: querySnapshot.data().pickupCount
         });
     }
+
+    // onCollectionUpdateHomeAddress = (querySnapshot) => {
+    //     //this.setState({ homeAddress: querySnapshot.data().homeAddress });
+    //     console.log(querySnapshot.data().homeAddress)
+    //     try {
+    //         this.setState({ homeAddress: querySnapshot.data().homeAddress });
+
+    //         if (this.state.pickupAddress == 'home') {
+    //             this.setState({ pickupAddress: this.state.homeAddress });
+    //             console.log(this.state.pickupAddress)
+    //         }
+    //     } catch (error) {
+    //         console.log(error)
+    //         Toast.show({
+    //             text: 'No home address on record',
+    //             buttonText: 'Okay',
+    //             type: 'danger'
+    //         });
+    //     }
+    // }
 
     // getPlaces() {
     //     const url = this.getUrlWithParamters();
@@ -154,7 +174,7 @@ export default class RequestPickupScreen extends Component {
                             minLength={2} // minimum length of text to search
                             autoFocus={false}
                             returnKeyType={'search'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
-                            listViewDisplayed='auto'    // true/false/undefined
+                            listViewDisplayed='true'    // true/false/undefined
                             fetchDetails={true}
                             renderDescription={row => row.description} // custom description render
                             onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
@@ -163,7 +183,7 @@ export default class RequestPickupScreen extends Component {
                                 this.setState({ pickupAddress: data.description })
                             }}
                             
-                            getDefaultValue={() => this.props.navigation.getParam('location','')}
+                            getDefaultValue={() => this.state.pickupAddress}
                             
                             query={{
                                 // available options: https://developers.google.com/places/web-service/autocomplete
@@ -206,7 +226,7 @@ export default class RequestPickupScreen extends Component {
                             // }}
                         
                             filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
-                            predefinedPlaces={[homePlace]}
+                            // predefinedPlaces={[this.state.homeAddress]}
                         
                             debounce={200} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
                             // renderLeftButton={()  => <Icon type='Feather' name='package'/>}
@@ -218,7 +238,7 @@ export default class RequestPickupScreen extends Component {
                             minLength={2} // minimum length of text to search
                             autoFocus={false}
                             returnKeyType={'search'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
-                            listViewDisplayed='auto'    // true/false/undefined
+                            listViewDisplayed='true'    // true/false/undefined
                             fetchDetails={true}
                             renderDescription={row => row.description} // custom description render
                             onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true

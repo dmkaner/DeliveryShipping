@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Dimensions, AsyncStorage } from 'react-native';
 import firebase from 'react-native-firebase';
 import MapView, { Marker, Callout } from 'react-native-maps';
-import { Button, Icon, Text, Header, Left, Container, Body, Right, Card, CardItem } from 'native-base';
+import { Button, Icon, Text, Header, Left, Container, Body, Right, Card, CardItem, Root, Toast } from 'native-base';
 import Geocoder from 'react-native-geocoding';
 
 const { width, height } = Dimensions.get('window');
@@ -19,6 +19,9 @@ export default class HomeAppleScreen extends Component {
 
     constructor(props) {
         super(props);
+        this.ref = firebase.firestore().collection('users');
+        this.user = firebase.auth().currentUser;
+        this.unsubscribe = null;
         this.state = {
             initialPosition: {
                 latitude: LATITUDE,
@@ -30,6 +33,7 @@ export default class HomeAppleScreen extends Component {
                 latitude: 0,
                 longitude: 0,
             },
+            homeAddress: '',
             firstLaunch: null
         };
     }
@@ -47,6 +51,7 @@ export default class HomeAppleScreen extends Component {
     }
 
     initiateLocationPickup() {
+
         let address = 'none'
         let lat = this.state.marker.latitude;
         let long = this.state.marker.longitude;
@@ -78,6 +83,9 @@ export default class HomeAppleScreen extends Component {
     }
 
     componentDidMount() {
+        // this.unsubscribe = this.ref.doc(this.user.uid).
+        this.unsubscribe = this.ref.doc(this.user.uid).collection('profile').doc('info').onSnapshot(this.onCollectionUpdateHomeAddress)
+
         navigator.geolocation.getCurrentPosition((position) => {
             var lat = parseFloat(position.coords.latitude);
             var long = parseFloat(position.coords.longitude);
@@ -122,77 +130,88 @@ export default class HomeAppleScreen extends Component {
 
     componentWillUnmount() {
         navigator.geolocation.clearWatch(this.watchID);
+        this.unsubscribe();
+    }
+
+    onCollectionUpdateHomeAddress = (querySnapshot) => {
+        try {
+            this.setState({ homeAddress: querySnapshot.data().homeAddress });
+        } catch (error) {
+            console.log('no home address', error)
+        }
     }
 
     render() {
 
         return (
-            <Container>
-                <MapView
-                    mapType={'mutedStandard'}
-                    style={styles.map}
-                    initialRegion={this.state.initialPosition}
-                    //region={this.state.initialPosition}
-                    onRegionChangeComplete={(region) => {
-                        console.log('hey', this.state.initialPosition.latitudeDelta);
-                    }}
-                    onPress={(e) => this.onMapPress(e)}>
-                    
-                    <Marker
-                        coordinate={this.state.marker}
-                        calloutOffset={{ x: -8, y: 48 }}
-                        ref={ref => { this.marker1 = ref; }}
-                        onCalloutPress={(e) => {this.initiateLocationPickup()}}>
+            <Root>
+                <Container>
+                    <MapView
+                        mapType={'mutedStandard'}
+                        style={styles.map}
+                        initialRegion={this.state.initialPosition}
+                        //region={this.state.initialPosition}
+                        onRegionChangeComplete={(region) => {
+                            console.log('hey', this.state.initialPosition.latitudeDelta);
+                        }}
+                        onPress={(e) => this.onMapPress(e)}>
+                        
+                        <Marker
+                            coordinate={this.state.marker}
+                            calloutOffset={{ x: -8, y: 48 }}
+                            ref={ref => { this.marker1 = ref; }}
+                            onCalloutPress={(e) => {this.initiateLocationPickup()}}>
 
-                            <Callout 
-                                tooltip 
-                                style={styles.customView}>
-                                <View style={styles.container}>
-                                    <View style={styles.bubble}>
-                                        <View style={styles.amount}>
-                                            <Text>Pickup Here</Text>
+                                <Callout 
+                                    tooltip 
+                                    style={styles.customView}>
+                                    <View style={styles.container}>
+                                        <View style={styles.bubble}>
+                                            <View style={styles.amount}>
+                                                <Text>Pickup Here</Text>
+                                            </View>
                                         </View>
                                     </View>
-                                </View>
-                            </Callout>
-                            
-                    </Marker>
+                                </Callout>
+                                
+                        </Marker>
 
-                </MapView>
+                    </MapView>
 
-                <Header transparent>
-                    <Left>
-                        <Button transparent onPress={() => {this.props.navigation.openDrawer()}}>
-                            <Icon name='menu' style={{fontSize: 35, color: 'black'}}/>
-                        </Button>
-                    </Left>
-                    <Body>
-                        {/* nothing */}
-                    </Body>
-                    <Right>
-                        {/* nothing */}
-                    </Right>
-                </Header>
+                    <Header transparent>
+                        <Left>
+                            <Button transparent onPress={() => {this.props.navigation.openDrawer()}}>
+                                <Icon name='menu' style={{fontSize: 35, color: 'black'}}/>
+                            </Button>
+                        </Left>
+                        <Body>
+                            {/* nothing */}
+                        </Body>
+                        <Right>
+                            {/* nothing */}
+                        </Right>
+                    </Header>
 
-                {/* change to cardItem button */}
-                <Card style={styles.mainCard}>
-                    <CardItem style={styles.mainCardItem}>  
-                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: '' })}}>
-                            <Icon type='Feather' name='package' style={{fontSize: 25, color: 'black'}}/>
-                            <Text style={styles.text}>Where's the Pickup?</Text>
-                        </TouchableOpacity>
-                    </CardItem>
+                    {/* change to cardItem button */}
+                    <Card style={styles.mainCard}>
+                        <CardItem style={styles.mainCardItem}>  
+                            <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: '' })}}>
+                                <Icon type='Feather' name='package' style={{fontSize: 25, color: 'black'}}/>
+                                <Text style={styles.text}>Where's the Pickup?</Text>
+                            </TouchableOpacity>
+                        </CardItem>
 
-                    <CardItem style={styles.homeCardItem}>
-                        <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: '' })}}>
-                            <Icon type='Feather' name='home' style={{fontSize: 22, color: 'black'}}/>
-                            <Text style={styles.textMini}>Home</Text>
-                        </TouchableOpacity>
-                    </CardItem>
-                </Card>
+                        <CardItem style={styles.homeCardItem}>
+                            <TouchableOpacity style={styles.buttonStyle} onPress={() => {this.props.navigation.navigate('RequestPickup', { location: this.state.homeAddress })}}>
+                                <Icon type='Feather' name='home' style={{fontSize: 22, color: 'black'}}/>
+                                <Text style={styles.textMini}>Home</Text>
+                            </TouchableOpacity>
+                        </CardItem>
+                    </Card>
 
-                {this.renderProfileShortcut()}
-            </Container>
+                    {this.renderProfileShortcut()}
+                </Container>
+            </Root>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'react-native-firebase';
-import { Button, Container, Content, Form, Item, Input, Label, Text, Header, Left, Right, Body, Picker, Icon } from 'native-base';
+import { Button, Container, Content, Form, Item, Input, Label, Text, Header, Left, Right, Body, Picker, Icon, Root, Toast } from 'native-base';
 
 export default class LogisticsScreen extends Component {
 
@@ -35,15 +35,33 @@ export default class LogisticsScreen extends Component {
     }
 
     completeOrder() {
-        this.postOrderInfo();
-
         this.stripeUserRef = firebase.firestore().collection(`stripe_customers/${this.user.uid}/charges`);
         this.stripeUserRef.add({
             source: null,
             amount: 500
-        });
+        })
+        .then(this.onSuccess.bind(this))
+        .catch(this.onFail.bind(this));
+    }
 
+    onFail(){
+        this.onBackButton();
+        Toast.show({
+            text: 'Payment Failed',
+            buttonText: 'Okay',
+            type: 'danger'
+        });
+    }
+
+    onSuccess(){
+        this.postOrderInfo();
+        this.props.navigation.navigate('Home');
         this.props.navigation.navigate('Pickups');
+        Toast.show({
+            text: 'Payment Succeded',
+            buttonText: 'Okay',
+            type: 'success'
+        });
     }
 
     onBackButton() {
@@ -87,95 +105,97 @@ export default class LogisticsScreen extends Component {
     render() {
 
         return (
-            <Container>
-                <Content>
+            <Root>
+                <Container>
+                    <Content>
 
-                    <Header transparent style={{marginBottom: 15}}>
-                        <Left>
-                            <Button iconLeft transparent onPress={ () => this.onBackButton() }>
-                                <Icon name='arrow-back' />
-                            </Button>
-                        </Left>
-                        <Body>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
+                        <Header transparent style={{marginBottom: 15}}>
+                            <Left>
+                                <Button iconLeft transparent onPress={ () => this.onBackButton() }>
+                                    <Icon name='arrow-back' />
+                                </Button>
+                            </Left>
+                            <Body>
+                            </Body>
+                            <Right>
+                            </Right>
+                        </Header>
 
-                    <Text style={{fontSize: 30, marginBottom: 30, fontWeight: "bold", alignSelf:'center'}}>Package Info</Text>
+                        <Text style={{fontSize: 30, marginBottom: 30, fontWeight: "bold", alignSelf:'center'}}>Package Info</Text>
 
-                    <Form>
-                        
-                        <Item picker>
-                            <Picker
-                                mode="dropdown"
-                                iosIcon={<Icon name="ios-arrow-down-outline" />}
-                                style={{ width: undefined }}
-                                placeholder="Do you need a box?"
-                                placeholderStyle={{ color: "#bfc6ea" }}
-                                placeholderIconColor="#007aff"
-                                selectedValue={this.state.boxQ}
-                                onValueChange={(val) => this.setState({ boxQ:val })}
-                            >
-                                <Picker.Item label="Yes" value={true} />
-                                <Picker.Item label="No" value={false} />
-                            </Picker>
-                        </Item>
+                        <Form>
+                            
+                            <Item picker>
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="ios-arrow-down-outline" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Do you need a box?"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                    selectedValue={this.state.boxQ}
+                                    onValueChange={(val) => this.setState({ boxQ:val })}
+                                >
+                                    <Picker.Item label="Yes" value={true} />
+                                    <Picker.Item label="No" value={false} />
+                                </Picker>
+                            </Item>
 
-                        <Item picker>
-                            <Picker
-                                mode="dropdown"
-                                iosIcon={<Icon name="ios-arrow-down-outline" />}
-                                style={{ width: undefined }}
-                                placeholder="Do you have a shipping label?"
-                                placeholderStyle={{ color: "#bfc6ea" }}
-                                placeholderIconColor="#007aff"
-                                selectedValue={this.state.shippingLabelQ}
-                                onValueChange={(val) => this.setState({ shippingLabelQ:val })}
-                            >
-                                <Picker.Item label="Yes" value={true} />
-                                <Picker.Item label="No" value={false} />
-                            </Picker>
-                        </Item>
+                            <Item picker>
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="ios-arrow-down-outline" />}
+                                    style={{ width: undefined }}
+                                    placeholder="Do you have a shipping label?"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                    selectedValue={this.state.shippingLabelQ}
+                                    onValueChange={(val) => this.setState({ shippingLabelQ:val })}
+                                >
+                                    <Picker.Item label="Yes" value={true} />
+                                    <Picker.Item label="No" value={false} />
+                                </Picker>
+                            </Item>
 
-                        <Item picker>
-                            <Picker
-                                mode="dropdown"
-                                iosIcon={<Icon name="ios-arrow-down-outline" />}
-                                style={{ width: undefined }}
-                                placeholder="What is the package size, roughly?"
-                                placeholderStyle={{ color: "#bfc6ea" }}
-                                placeholderIconColor="#007aff"
-                                selectedValue={this.state.boxSizeQ}
-                                onValueChange={(val) => this.setState({ boxSizeQ:val })}
-                            >
-                                <Picker.Item label="Small" value='small' />
-                                <Picker.Item label="Medium" value='medium' />
-                                <Picker.Item label="Large" value='large' />
-                            </Picker>
-                        </Item>
+                            <Item picker>
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="ios-arrow-down-outline" />}
+                                    style={{ width: undefined }}
+                                    placeholder="What is the package size, roughly?"
+                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                    placeholderIconColor="#007aff"
+                                    selectedValue={this.state.boxSizeQ}
+                                    onValueChange={(val) => this.setState({ boxSizeQ:val })}
+                                >
+                                    <Picker.Item label="Small" value='small' />
+                                    <Picker.Item label="Medium" value='medium' />
+                                    <Picker.Item label="Large" value='large' />
+                                </Picker>
+                            </Item>
 
-                        {/* { this.preciseOrEstimate() } */}
-                        
-                        
-                        {/* <Item floatingLabel>
-                            <Label>Do you have a box?</Label>
-                            <Input onChangeText={(text) => this.setState({ boxQ:text })}/>
-                        </Item>
-                        <Item floatingLabel>
-                            <Label>You have the shipping label</Label>
-                            <Input onChangeText={(text) => this.setState({ shippingLabelQ:text })}/>
-                        </Item>
-                        <Item floatingLabel last>
-                            <Label>Item Size Roughly</Label>
-                            <Input onChangeText={(text) => this.setState({ boxSizeQ:text })}/>
-                        </Item> */}
-                    </Form>
-                    <Button block bordered rounded style={{ margin: 15 }} onPress={() => this.completeOrder()}>
-                        <Text>Pay $5</Text>
-                    </Button>
-                </Content>
-            </Container>
+                            {/* { this.preciseOrEstimate() } */}
+                            
+                            
+                            {/* <Item floatingLabel>
+                                <Label>Do you have a box?</Label>
+                                <Input onChangeText={(text) => this.setState({ boxQ:text })}/>
+                            </Item>
+                            <Item floatingLabel>
+                                <Label>You have the shipping label</Label>
+                                <Input onChangeText={(text) => this.setState({ shippingLabelQ:text })}/>
+                            </Item>
+                            <Item floatingLabel last>
+                                <Label>Item Size Roughly</Label>
+                                <Input onChangeText={(text) => this.setState({ boxSizeQ:text })}/>
+                            </Item> */}
+                        </Form>
+                        <Button block bordered rounded style={{ margin: 15 }} onPress={() => this.completeOrder()}>
+                            <Text>Pay $5</Text>
+                        </Button>
+                    </Content>
+                </Container>
+            </Root>
         );
     }
 }

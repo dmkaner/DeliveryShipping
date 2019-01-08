@@ -1,8 +1,7 @@
 
 To Do
     Home
-        - get the home location shortcut to work
-        - must add payment to order
+        - must add payment for order
     Help 
         - design the page
     Logistics
@@ -13,6 +12,9 @@ To Do
         - add push notifications
     Add Payment
         - add loading thingy
+    Request Pickup
+        - updating location bug
+        - textbox not working bug
 
 
 Done
@@ -38,5 +40,8 @@ Done
         - on payment make database change paid value to true
         - on payment add date/time field to database
         - on payment add status field to database
+    Home
+        - get the home location shortcut to work
+        - refresh stack when clicking on home from navigator
 
 

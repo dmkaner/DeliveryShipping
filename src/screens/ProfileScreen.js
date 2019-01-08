@@ -85,7 +85,7 @@ export default class ProfileScreen extends Component {
         const imageRef = firebase.storage().ref(this.user.uid).child("dp.jpg")
         imageRef.getDownloadURL().then(function(url) {
             this.setState({dp: url});
-        }.bind(this));
+        }.bind(this)).catch((error)=> {console.log(error, 'no prof pic')});
     }
     
     componentWillUnmount() {
